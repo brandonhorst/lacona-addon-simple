@@ -1,6 +1,6 @@
 {
   "name": "lacona-addon-simple",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Simplify the lacona parser output events",
   "main": "lib/simple.js",
   "directories": {
