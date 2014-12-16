@@ -1,6 +1,9 @@
 lacona-addon-simple
 ===================
 
+[![Build Status](https://travis-ci.org/lacona/lacona-addon-simple.svg?branch=master)](https://travis-ci.org/lacona/lacona-addon-simple)
+[![Coverage Status](https://img.shields.io/coveralls/lacona/lacona-addon-simple.svg)](https://coveralls.io/r/lacona/lacona-addon-simple)
+
 By default, the [lacona](http://github.com/lacona/lacona) parser behaves like a stream outputting parse results in the order that they are computed. However, sometimes for simple applications you do not need this complex behavior. `lacona-addon-simple` simplifies the results of the parser to return all parse results in a callback.
 
 ```javascript
