@@ -37,6 +37,11 @@ describe('lacona-addon-stateful', function () {
       expect(err).to.exist();
       done();
     });
+  });
 
+  it('does not break if lacona is parse is called on the parser', function () {
+    expect(function () {
+      simpleParser.parser.parse();
+    }).to.not.throw;
   });
 });
