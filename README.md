@@ -4,6 +4,34 @@ lacona-addon-simple
 [![Build Status](https://img.shields.io/travis/lacona/lacona-addon-simple.svg?style=flat)](https://travis-ci.org/lacona/lacona-addon-simple)
 [![Coverage Status](https://img.shields.io/coveralls/lacona/lacona-addon-simple.svg?style=flat)](https://coveralls.io/r/lacona/lacona-addon-simple)
 
+#Removal Notice
+
+This module is no longer used. On modern versions of Lacona, its functionality can be reproduced with:
+
+```js
+var Writable = require('stream').Writable;
+
+function toArray(done) {
+  var stream = new Writable({ objectMode: true });
+  var list = [];
+  stream.write = function(obj) {
+    list.push(obj);
+  };
+
+  stream.end = function() {
+    done(list);
+  };
+
+  return stream;
+}
+
+parser.parse(input).pipe(toArray(function (data) {
+  console.log(data);
+});
+```
+
+#Historical Information
+
 By default, the [lacona](http://github.com/lacona/lacona) parser behaves like a stream outputting parse results in the order that they are computed. However, sometimes for simple applications you do not need this complex behavior. `lacona-addon-simple` simplifies the results of the parser to return all parse results in a callback.
 
 ```javascript
