@@ -1,23 +1,21 @@
-var Simple = require('..');
-
-var lacona = require('lacona');
 var chai = require('chai');
 var expect = chai.expect;
 
-describe('lacona-addon-stateful', function () {
+var lacona = require('lacona');
+var Simple = require('..');
+
+var grammar = {
+  phrases: [{
+    name: 'test',
+    root: 'test'
+  }]
+};
+
+describe('lacona-addon-simple', function () {
   var simpleParser;
 
   beforeEach(function () {
-    var grammar = {
-      phrases: [{
-        name: 'test',
-        root: 'test'
-      }]
-    };
-
-    var parser = new lacona.Parser({sentences: ['test']});
-
-    parser.understand(grammar);
+    var parser = new lacona.Parser({sentences: ['test']}).understand(grammar);
 
     simpleParser = new Simple(parser);
   });
@@ -31,17 +29,5 @@ describe('lacona-addon-stateful', function () {
     });
 
   });
-
-  it('outputs an error if one occurs', function (done) {
-    simpleParser.parse(123, function(err) {
-      expect(err).to.exist();
-      done();
-    });
-  });
-
-  it('does not break if lacona is parse is called on the parser', function () {
-    expect(function () {
-      simpleParser.parser.parse();
-    }).to.not.throw;
-  });
+  
 });

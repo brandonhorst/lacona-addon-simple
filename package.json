@@ -1,6 +1,6 @@
 {
   "name": "lacona-addon-simple",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Simplify the lacona parser output events",
   "main": "lib/simple.js",
   "directories": {
@@ -13,11 +13,11 @@
     "chai": "^1.10.0",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.5",
-    "jshint": "^2.5.10",
+    "jshint": "^2.5.11",
     "jshint-stylish": "^1.0.0",
-    "lacona": "^0.10.0",
+    "lacona": "^0.11.0",
     "lacona-util-jshint": "^0.2.0",
-    "mocha": "^2.0.1"
+    "mocha": "^2.1.0"
   },
   "scripts": {
     "test": "mocha test",
